@@ -36,7 +36,11 @@ const router = async () => {
     };
   }
 
-  console.log(match.route.view());
+  // 활성화된 view 가져오기
+  const view = new match.route.view();
+
+  // #app element에 활성화된 view의 HTML 삽입
+  document.querySelector("#app").innerHTML = await view.getHtml();
 };
 
 // 뒤로가기나 새로고침했을 때 router도 그 페이지에 맞게 동작
