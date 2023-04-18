@@ -5,6 +5,7 @@ const router = async () => {
     { path: "/", view: () => console.log("Viewing Dashboard") },
     { path: "/posts", view: () => console.log("Viewing Posts") },
     { path: "/settings", view: () => console.log("Viewing settings") },
+    { path: "/404", view: () => console.log("Not Found") },
   ];
 
   // 현재 route와 현재 페이지 경로가 일치하는지 테스트
@@ -19,7 +20,7 @@ const router = async () => {
 
   if (!match) {
     match = {
-      route: routes[0],
+      route: routes[routes.length - 1],
       isMatch: true,
     };
   }
