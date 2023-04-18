@@ -1,7 +1,7 @@
-import Dashboard from "../views/Dashboard";
-import Posts from "../views/Posts";
-import Settings from "../views/Settings";
-import NotFound from "../views/NotFound";
+import Dashboard from "../views/Dashboard.js";
+import Posts from "../views/Posts.js";
+import Settings from "../views/Settings.js";
+import NotFound from "../views/NotFound.js";
 
 // 페이지 전환 함수
 const navigateTo = (url) => {
