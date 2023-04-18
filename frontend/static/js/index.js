@@ -15,7 +15,16 @@ const router = async () => {
     };
   });
 
-  console.log(routeMatches);
+  let match = routeMatches.find((routeMatche) => routeMatche.isMatch);
+
+  if (!match) {
+    match = {
+      route: routes[0],
+      isMatch: true,
+    };
+  }
+
+  console.log(match.route.view());
 };
 
 document.addEventListener("DOMContentLoaded", () => {
