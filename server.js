@@ -12,6 +12,7 @@ app.use(
 );
 
 // get요청이 오면 frontend/index.html 파일을 읽고 내용을 클라이언트로 전송한다.
+// Single Page이기 때문에 모든 경로에서 index.html을 불러온다.
 app.get("/*", (req, res) => {
   res.sendFile(path.resolve("frontend", "index.html"));
 });
