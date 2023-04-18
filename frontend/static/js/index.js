@@ -1,3 +1,8 @@
+import Dashboard from "../views/Dashboard";
+import Posts from "../views/Posts";
+import Settings from "../views/Settings";
+import NotFound from "../views/NotFound";
+
 // 페이지 전환 함수
 const navigateTo = (url) => {
   history.pushState(null, null, url);
@@ -8,10 +13,10 @@ const navigateTo = (url) => {
 const router = async () => {
   // 각 route의 경로와 현재 페이지 확인용 콘솔
   const routes = [
-    { path: "/", view: () => console.log("Viewing Dashboard") },
-    { path: "/posts", view: () => console.log("Viewing Posts") },
-    { path: "/settings", view: () => console.log("Viewing settings") },
-    { path: "/404", view: () => console.log("Not Found") },
+    { path: "/", view: Dashboard },
+    { path: "/posts", view: Posts },
+    { path: "/settings", view: Settings },
+    { path: "/404", view: NotFound },
   ];
 
   // 현재 route와 현재 페이지 경로가 일치하는지 테스트
