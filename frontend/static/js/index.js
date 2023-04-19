@@ -27,8 +27,10 @@ const router = async () => {
     };
   });
 
+  // 유효한 경로인지 확인
   let match = routeMatches.find((routeMatche) => routeMatche.isMatch);
 
+  // 유효하지 않다면 404 페이지로 이동
   if (!match) {
     match = {
       route: routes[routes.length - 1],
@@ -46,6 +48,7 @@ const router = async () => {
 // 뒤로가기나 새로고침했을 때 router도 그 페이지에 맞게 동작
 window.addEventListener("popstate", router);
 
+// DOMContentLoaded => 초기 HTML 문서를 완전히 불러오고 분석했을 떄 발생
 document.addEventListener("DOMContentLoaded", () => {
   // 클릭 이벤트 발생 시 해당 target이 "data-link" attribute가 있다면 페이지 이동 함수 실행
   document.body.addEventListener("click", (e) => {
